@@ -1,4 +1,4 @@
-import { Box, Flex, HStack, Image, Text } from "@chakra-ui/react";
+import { Box, Flex, HStack, Image, Text, extendTheme } from "@chakra-ui/react";
 import Todo from "../assets/images/icon-todo.svg";
 import Calender from "../assets/images/icon-calendar.svg";
 import Reminders from "../assets/images/icon-reminders.svg";
@@ -9,14 +9,14 @@ export const Features = () => {
     <Box
       pos={"absolute"}
       borderRadius={"10px"}
-      w={["320px", "320px", "150px", "150px", "160px"]}
-      ml={["320px", "320px", "50px", "50px", "85px"]}
-      mt={["320px", "320px", "10px", "10px", "10px"]}
+      w={["320px", "320px", "320px", "150px", "160px"]}
+      ml={["0px", "0px", "0px", "50px", "85px"]}
+      mt={["30px", "30px", "30px", "10px", "10px"]}
       bgColor={"white"}
     >
       <Flex
         flexDirection={"column"}
-        h={["320px", "320px", "160px", "160px", "160px"]}
+        h={["320px", "320px", "320px", "160px", "160px"]}
         gap={"2"}
         pt={"3"}
         pl={"25px"}
@@ -74,9 +74,9 @@ export const Company = () => {
     <Box
       pos={"absolute"}
       borderRadius={"10px"}
-      w={["320px", "320px", "120px", "120px", "130px"]}
-      ml={["320px", "320px", "200px", "200px", "280px"]}
-      mt={["320px", "320px", "10px", "10px", "10px"]}
+      w={["320px", "320px", "320px", "120px", "130px"]}
+      ml={["0px", "0px", "0px", "200px", "280px"]}
+      mt={["80px", "80px", "70px", "10px", "10px"]}
       bgColor={"hsl(0, 0%, 100%)"}
     >
       <Flex
@@ -114,3 +114,20 @@ export const Company = () => {
     </Box>
   );
 };
+
+export const Theme = extendTheme({
+  components: {
+    Drawer: {
+      parts: ["dialog", "header", "body"],
+      variants: {
+        primary: {
+          secondary: {
+            dialog: {
+              maxW: "220px",
+            },
+          },
+        },
+      },
+    },
+  },
+});

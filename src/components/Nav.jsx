@@ -13,14 +13,14 @@ const Nav = ({
 }) => {
   return (
     <Box
-      display={["none", "none", "block", "block", "block"]}
+      display={["none", "none", "none", "block", "block"]}
       // w={["320px", "320px", "160px", "160px", "1440px"]}
       ml={["none", "none", "30px", "40px", "40px"]}
       pt={["320px", "320px", "20px", "20px", "20px"]}
       pb={["320px", "320px", "110px", "80px", "80px"]}
     >
       <Flex justifyContent={"space-between"}>
-        <HStack w={["320px", "320px", "450px", "600px", "600px"]}>
+        <HStack w={["375px", "425px", "450px", "600px", "600px"]}>
           <Image src={Logo} />
           <Flex
             flexDirection={"row"}
