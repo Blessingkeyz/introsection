@@ -16,12 +16,12 @@ export const Features = () => {
     >
       <Flex
         flexDirection={"column"}
-        h={["320px", "320px", "320px", "160px", "160px"]}
+        h={["200px", "320px", "320px", "160px", "160px"]}
         gap={"2"}
         pt={"3"}
         pl={"25px"}
       >
-        <HStack p>
+        <HStack>
           <Image src={Todo} />
           <Text
             fontSize={"18px"}

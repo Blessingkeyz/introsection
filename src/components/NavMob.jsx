@@ -71,11 +71,7 @@ const NavMob = ({
           <DrawerBody>
             <Flex flexDirection={"column"} justifyContent={"space-between"}>
               <VStack>
-                <Flex
-                  flexDirection={"column"}
-                  h="150px"
-                  justifyContent={"space-between"}
-                >
+                <Flex flexDirection={"column"} h="150px" gap={3}>
                   <Link _hover={{ textDecoration: "none" }}>
                     <VStack
                       onClick={() => [
@@ -99,6 +95,14 @@ const NavMob = ({
                   {showFeatures ? <Features /> : null}
                   <Link _hover={{ textDecoration: "none" }}>
                     <VStack
+                      pos={"relative"}
+                      pt={
+                        showFeatures || showCompany
+                          ? !showCompany
+                            ? "145px"
+                            : "0px"
+                          : "0px"
+                      }
                       onClick={() => [
                         setShowCompany((prev) => !prev),
                         setShowFeatures(false),
@@ -123,6 +127,14 @@ const NavMob = ({
                     onClick={() => {
                       [setShowFeatures(false), setShowCompany(false)];
                     }}
+                    pt={
+                      showFeatures || showCompany
+                        ? !showCompany
+                          ? "0px"
+                          : "110px"
+                        : "0px"
+                    }
+                    pos={"relative"}
                   >
                     <Text
                       fontSize={["18px", "18px", "20px"]}
@@ -135,6 +147,7 @@ const NavMob = ({
                     </Text>
                   </Link>
                   <Link
+                    pos={"relative"}
                     _hover={{ textDecoration: "none" }}
                     onClick={() => {
                       [setShowFeatures(false), setShowCompany(false)];
@@ -159,7 +172,13 @@ const NavMob = ({
                 pos={"relative"}
                 flexDirection={"column"}
                 w={"100%"}
-                pt={"35px"}
+                pt={
+                  showFeatures || showCompany
+                    ? !showCompany
+                      ? "200px"
+                      : "150px"
+                    : "30px"
+                }
                 onClick={() => {
                   [setShowFeatures(false), setShowCompany(false)];
                 }}
